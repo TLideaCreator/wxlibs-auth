@@ -2,7 +2,25 @@
     "name": "wxlib/auth",
     "type": "library",
     "description": "微信工具类库",
+    "license": "MIT",
+    "keywords": ["wechat", "weixin","wx"],
+    "authors": [
+        {
+            "name": "wxlibs",
+            "homepage": "https://github.com/TLideaCreator/wxlibs-auth"
+        },
+        {
+            "name": "Tommy Lee",
+            "homepage": "https://github.com/TLideaCreator"
+        }
+    ],
     "require": {
+        "php": "^5.6 | ^7.0",
         "php-curl-class/php-curl-class": "^8.6"
+    },
+    "autoload": {
+        "psr-0": {
+            "WXLibs": "src/"
+        }
     }
 }

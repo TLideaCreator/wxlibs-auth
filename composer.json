@@ -1,0 +1,7 @@
+{
+    "name": "wxlib/auth",
+    "type": "library",
+    "require": {
+        "php-curl-class/php-curl-class": "^8.6"
+    }
+}

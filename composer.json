@@ -1,6 +1,7 @@
 {
     "name": "wxlib/auth",
     "type": "library",
+    "description": "微信工具类库",
     "require": {
         "php-curl-class/php-curl-class": "^8.6"
     }

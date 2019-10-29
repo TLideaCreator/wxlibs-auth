@@ -1,5 +1,5 @@
 <?php
-namespace WXLibs\Auth;
+namespace TLLibs\Auth;
 
 use Curl\Curl;
 

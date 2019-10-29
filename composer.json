@@ -1,14 +1,10 @@
 {
-    "name": "wxlib/auth",
+    "name": "tlibs/plugins",
     "type": "library",
-    "description": "微信工具类库",
+    "description": "个人laravel工具类库",
     "license": "MIT",
-    "keywords": ["wechat", "weixin","wx"],
+    "keywords": ["tools", "common","laravel"],
     "authors": [
-        {
-            "name": "wxlibs",
-            "homepage": "https://github.com/TLideaCreator/wxlibs-auth"
-        },
         {
             "name": "Tommy Lee",
             "homepage": "https://github.com/TLideaCreator"
@@ -16,11 +12,16 @@
     ],
     "require": {
         "php": "^5.6 | ^7.0",
-        "php-curl-class/php-curl-class": "^8.6"
+        "php-curl-class/php-curl-class": "^8.6",
+        "lcobucci/jwt": "^3.3"
+    },
+    "require-dev": {
+        "laravel/lumen-framework": "^5.5",
+        "fzaninotto/faker": "^1.4"
     },
     "autoload": {
         "psr-0": {
-            "WXLibs": "src/"
+            "TLLibs": "src/"
         }
     }
 }

@@ -4,7 +4,7 @@
 namespace TLLibs\Format;
 
 
-use TLLibs\Auth\TokenCenter;
+use TLLibs\Auth\TokenAuth;
 use TLLibs\Models\User;
 use League\Fractal\TransformerAbstract;
 
@@ -20,7 +20,7 @@ class LoginFormat extends TransformerAbstract
             'phone' => $user->phone,
         ];
         if(!empty($user->token)){
-            $item['token'] = TokenCenter::getInstance()->generateToken($user->token);
+            $item['token'] = TokenAuth::getInstance()->generateToken($user->token);
         }
         return $item;
     }

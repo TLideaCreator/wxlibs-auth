@@ -13,7 +13,7 @@ use Lcobucci\JWT\Signer\Hmac\Sha256;
 use Lcobucci\JWT\Parser;
 use Lcobucci\JWT\Signer\Key;
 
-class TokenCenter
+class TokenAuth
 {
     private static $_instance = null;
     private $key = null;
@@ -26,12 +26,12 @@ class TokenCenter
     }
 
     /**
-     * @return TokenCenter|null
+     * @return TokenAuth|null
      */
     public static function getInstance()
     {
         if (is_null(self::$_instance)) {
-            self::$_instance = new TokenCenter();
+            self::$_instance = new TokenAuth();
         }
         return self::$_instance;
     }

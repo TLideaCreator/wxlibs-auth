@@ -13,7 +13,7 @@ class UserDBCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'db:user';
+    protected $signature = 'tlib:tools {sub : api sub}';
 
     /**
      * The console command description.
@@ -34,6 +34,18 @@ class UserDBCommand extends Command
                 $newDb
             );
         }
+        $subType = $this->input->getArgument('sub') ;
+        if(empty($subType)){
+            $subType= 'app_sub';
+        }
+
+        $envContent = fopen(base_path('.env'), 'a');
+        fwrite($envContent, "API_STANDARDS_TREE=prs\nAPI_SUBTYPE={$subType}\nAPI_PREFIX=api\nAPI_VERSION=v1\n");
+        fclose($envContent);
+
+        $envContent = fopen(base_path('.env.example'), 'a');
+        fwrite($envContent, "API_STANDARDS_TREE=prs\nAPI_SUBTYPE={$subType}\nAPI_PREFIX=api\nAPI_VERSION=v1\n");
+        fclose($envContent);
     }
 
 }

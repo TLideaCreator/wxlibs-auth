@@ -6,7 +6,7 @@
  * Time: 19:39
  */
 
-namespace TTLibs\Middleware;
+namespace TLLibs\Middleware;
 
 use Closure;
 

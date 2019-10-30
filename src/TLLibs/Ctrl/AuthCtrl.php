@@ -6,7 +6,7 @@ namespace TLLibs\Ctrl;
 
 use Faker\Provider\Uuid;
 use Illuminate\Support\Facades\Crypt;
-use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Request;
 use TLLibs\Auth\WXAuth;
 use TLLibs\Common\ApiCtrl;
 use TLLibs\Format\LoginFormat;
@@ -23,9 +23,9 @@ class AuthCtrl extends ApiCtrl
         $this->formatTransfer = new LoginFormat();
     }
 
-    public function accountLogin(){
-        $acct = Input::get('account',null);
-        $pwd = Input::get('pwd',null);
+    public function accountLogin(Request $request){
+        $acct = $request->input('account',null);
+        $pwd = $request->input('pwd',null);
         $user = User::where(function ($query) use ($acct, $pwd) {
             $query->where('phone', $acct)
                 ->orWhere('email', $acct);
@@ -41,12 +41,11 @@ class AuthCtrl extends ApiCtrl
         return $this->toJsonItem($user);
     }
 
-    public function weChatLogin()
+    public function weChatLogin(Request $request)
     {
-        $code = Input::get('code',null);
-        $wxId = $_SERVER['wx_key'];
-        $wxSecret = $_SERVER['wx_secret'];
-        $wxOpenId = (new WXAuth($wxId,$wxSecret))->decryptData($code);
+        $code = $request->input('code',null);
+
+        $wxOpenId = WXAuth::getInstance()->decryptData($code);
         if(empty($wxOpenId)){
             abort(404);
         }

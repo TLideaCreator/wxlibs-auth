@@ -15,15 +15,15 @@ class CreateTableUsers extends Migration{
     {
         Schema::create('users', function (Blueprint $table) {
             $table->uuid('id')->default(null)->comment('唯一id');
-            $table->string('phone')->default(null)->comment('登录手机');
-            $table->string('wx_id',32)->default(null)->comment('微信id');
-            $table->string('wb_id',32)->default(null)->comment('微博id');
-            $table->string('zfb_id', 32)->default(null)->comment('支付宝id');
-            $table->string('email', 256)->default(null)->comment('登录邮箱');
-            $table->string('password',256)->default(null)->comment('密码');
-            $table->string('nickname')->default(null)->comment('用户名字');
-            $table->string('avatar')->default(null)->comment('头像');
-            $table->string('token')->default(null)->comment('登录令牌');
+            $table->string('phone')->default('')->comment('登录手机');
+            $table->string('wx_id',32)->default('')->comment('微信id');
+            $table->string('wb_id',32)->default('')->comment('微博id');
+            $table->string('zfb_id', 32)->default('')->comment('支付宝id');
+            $table->string('email', 256)->default('')->comment('登录邮箱');
+            $table->string('password',256)->default('')->comment('密码');
+            $table->string('nickname')->default('')->comment('用户名字');
+            $table->string('avatar')->default('')->comment('头像');
+            $table->string('token')->default('')->comment('登录令牌');
             $table->timestamps();
         });
     }

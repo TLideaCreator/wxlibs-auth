@@ -12,14 +12,15 @@
     ],
     "require": {
         "php": "^5.6 | ^7.0",
-        "php-curl-class/php-curl-class": "^8.6",
-        "lcobucci/jwt": "^3.3",
-        "dingo/api": "^2.2",
         "ext-json": "*"
     },
     "require-dev": {
         "laravel/lumen-framework": "^5.5",
-        "fzaninotto/faker": "^1.4"
+        "fzaninotto/faker": "^1.4",
+        "php-curl-class/php-curl-class": "^8.6",
+        "lcobucci/jwt": "^3.3",
+        "dingo/api": "^2.2",
+        "illuminate/support": "^5.6"
     },
     "autoload": {
         "psr-0": {

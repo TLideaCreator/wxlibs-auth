@@ -15,11 +15,10 @@
         "ext-json": "*",
         "php-curl-class/php-curl-class": "^8.6",
         "lcobucci/jwt": "^3.3",
-        "dingo/api": "^2.2",
-        "illuminate/support": "^5.6"
+        "dingo/api": "^2.2"
     },
     "require-dev": {
-        "laravel/lumen-framework": "^5.5",
+        "laravel/lumen-framework": "^6.0",
         "fzaninotto/faker": "^1.4"
     },
     "autoload": {

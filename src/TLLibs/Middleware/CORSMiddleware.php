@@ -27,7 +27,7 @@ class CORSMiddleware
             'Access-Control-Allow-Methods'     => 'POST, PATCH, GET, OPTIONS, PUT, DELETE',
             'Access-Control-Allow-Credentials' => 'true',
             'Access-Control-Max-Age'           => '86400',
-            'Access-Control-Allow-Headers'     => 'Content-Type, Authorization, X-Requested-With, auth-key'
+            'Access-Control-Allow-Headers'     => 'Content-Type, Authorization, X-Requested-With, auth-key, platform'
         ];
 
         if ($request->isMethod('OPTIONS'))
